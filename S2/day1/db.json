@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "text": "Squats",
+      "isCompleted": false,
+      "id": 1
+    },
+    {
+      "text": "Sprints",
+      "isCompleted": false,
+      "id": 2
+    },
+    {
+      "text": "Learn ReactJS",
+      "isCompleted": false,
+      "id": 3
+    },
+    {
+      "text": "Learn NodeJS",
+      "isCompleted": false,
+      "id": 4
+    },
+    {
+      "text": "Learn MongoDB",
+      "isCompleted": false,
+      "id": 5
+    },
+    {
+      "text": "Learn MySQL",
+      "isCompleted": false,
+      "id": 6
+    }
+  ]
+}

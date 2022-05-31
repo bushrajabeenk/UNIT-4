@@ -1,0 +1,18 @@
+1. Controlled and uncontrolled components
+
+2. Composition and inheritance
+
+
+
+
+ReactJS 
+    -useState
+    -useEffect
+    -useRef
+    -Styling libraries 
+        - .css
+        - .module.css
+        - styled-components
+        - Chakra-UI
+
+    -contextAPI
