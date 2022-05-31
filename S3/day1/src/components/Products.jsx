@@ -1,6 +1,5 @@
-import React, {useContext} from 'react';
-import {AuthContext} from "../context/AuthContext";
-import Cart from 
+// import React, {useContext} from 'react';
+// import {AuthContext} from "../context/AuthContext";
 import Product from './Product';
 
 const Products = () => {

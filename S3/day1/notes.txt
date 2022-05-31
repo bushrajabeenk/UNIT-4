@@ -5,6 +5,7 @@
 
 
 <Amazon>
+<CartProvider>
     <Navbar>
         <Logo />
         <Address />
@@ -24,7 +25,13 @@
             <Button>Add to cart</Button>
         </Product>
     </Products>
+    </CartProvider>
 </Amazon>
+
+// create a context
+// create a Provider
+// wrap the application in provider
+// use the information anywhere using useContext
 
 
 

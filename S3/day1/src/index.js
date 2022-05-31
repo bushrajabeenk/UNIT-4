@@ -4,12 +4,30 @@ import "./index.css";
 // import Appp from "./Appp";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { AuthProvider } from "./context/AuthContext";
+import { CartProvider } from "./context/CartContext";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<App />);
+root.render(
+  <AuthProvider>
+    <ThemeProvider>
+      <CartProvider>
+        <App />
+      </CartProvider>
+    </ThemeProvider>
+  </AuthProvider>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+  // the below way of defining will give error, as information flows in one direction
+  // this is called Composition : information never flows from child to parent, always flows from parent to child
+  // somewhat like inheritance, accessible to only children not outside it
+
+  //   <CartProvider>
+  //   <AuthProvider>
+  //     <App />
+  //   </AuthProvider>
+  // </CartProvider>
+);
+
 reportWebVitals();

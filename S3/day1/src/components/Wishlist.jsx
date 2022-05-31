@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 const Wishlist = () => {
-  const { value } = useContext(CartContext);
-  return <div>Wishlist: {value}</div>;
+  const { count } = useContext(CartContext);
+  return <div>Wishlist: {count}</div>;
 };
 
 export default Wishlist;
