@@ -4,6 +4,30 @@
 
 
 
+<Amazon>
+    <Navbar>
+        <Logo />
+        <Address />
+        <ssearch />
+        <Country />
+        <Cart>
+            {products.length}
+            <ProductList />
+        </Cart>
+    </Navbar>
+    <Header />
+    <SubHeader />
+    <Products>
+        <ProductsFilter />
+        <Product /> //list
+        <Product key=2 >
+            <Button>Add to cart</Button>
+        </Product>
+    </Products>
+</Amazon>
+
+
+
 
 ReactJS 
     -useState
