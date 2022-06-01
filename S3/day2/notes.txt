@@ -1,0 +1,36 @@
+    Problem:
+
+1. I have only one HTML file in React, so I have only one route
+2. we cannot add multiple html files in react // SPA - single page application- only one HTML
+3. React to handle URLs
+    -react-router-dom 
+
+    -Components : How to use React-router-dom 
+
+1. Installation : `npm install react-router-dom@6`
+2. wrap our application in BrowserRouter - index.js
+    - import { BrowserRouter } from 'react-router-dom'
+    - wrap <App/> with <BrowserRouter><App></App></BrowserRouter>
+
+
+3. Create Routes 
+ / :home
+ /about : about
+ 
+
+
+
+
+
+
+
+ ENTIRE FLOW
+ - intall
+ - wrap app in browser router
+ - create routes and route
+ - link and useNavigate for going to that page 
+ - having dynamic info in a route /:key & read it using useParams 
+ - having nested routes 
+  <Routes>
+    
+  </Routes>
