@@ -23,7 +23,7 @@ const Navbar = () => {
       {/* less number of internal network requests
        with Link for ex, if we click on home, products, etc links one after another,
        everytime network request will not be made, instead only once the request will be made, 
-       i.e when you refresh the page */}
+       i.e only when you refresh the page */}
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
       <Link to="/products">Products</Link>

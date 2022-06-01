@@ -11,12 +11,29 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
+
         <Route path="" element={<Home />}></Route>
         <Route path="about" element={<About />}></Route>
-        {/* <Route path="products/:id" element={<Products />}></Route> */}
+
+        {/* to access both all the products at once and single 
+        product by button click */}
+        {/* <Route path="products" element={<Products />}></Route>
+        <Route path="products/:id" element={<Product />}></Route> */}
+
+        {/* <Route path="products/:id/:name" element={<Product />}> */}
+        {/* the above id and name can be extracted using usePara hooks in  the Product component */}
+        
+        {/* having child information in parent, ie products, 
+        then display by id */}
+        {/* the below 2 lines state that /products page will lead 
+        us to Products page only and anything after products denoted as
+        products/* will ALSO lead us to Products page, So to show that particular
+        page for example, if products/1 should lead us to produsct 1 page
+        then we need to use Outlet to show product 1 page */}
         <Route path="products/*" element={<Products />}>
           <Route path=":id" element={<Product />} />
         </Route>
+
       </Routes>
     </div>
   );
@@ -24,9 +41,8 @@ function App() {
 
 export default App;
 
-
-// / is not mandatory 
+// / is not mandatory
 // for nested info we need 3 changes
-// 1, parent route should accept all info from url using *
-// 2. wrap child with parent and remove duplicate path info
-// use outlet tag on where we want to show child info
+  // 1, parent route should accept all info from child url using *
+  // 2. wrap child with parent and remove duplicate path info
+  // 3. use outlet tag on where we want to show child info

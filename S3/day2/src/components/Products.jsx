@@ -9,7 +9,7 @@ const Products = () => {
     const fetchProducts = async () => {
       let r = await axios.get(`http://localhost:1234/products`);
       let data = await r.data;
-      console.log(data);
+      //console.log(data);
       setProducts(data);
     };
     fetchProducts();
@@ -18,18 +18,17 @@ const Products = () => {
   return (
     <div>
       Products:{""}
-      <div style={{ disply: "grid", gridTemplateColumns: "1fr 1fr" }}>
-        <Outlet>
-          <div>
-            {products.map((prod) => {
-              return (
-                <div key={prod.id}>
-                  <Link to={`/products/${prod.id}`}> {prod.name}</Link>
-                </div>
-              );
-            })}
-          </div>
-        </Outlet>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+        <div>
+          {products.map((prod) => {
+            return (
+              <div key={prod.id}>
+                <Link to={`/products/${prod.id}`}> {prod.name}</Link>
+              </div>
+            );
+          })}
+        </div>
+        <Outlet />
       </div>
     </div>
   );

@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const Product = () => {
   const [product, setProduct] = useState({});
   const { id } = useParams();
+  // useParamsto extract the url parameters
 
   console.log(id);
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:1234/products/${id}`)
-        .then((r) => r.json())
-        .then((d) => setProduct(d));
+      const getData = async () => {
+        let res = await axios.get(`http://localhost:1234/products/${id}`);
+        let data = await res.data;
+        //console.log(data);
+        setProduct(data);
+      };
+      getData();
+      // fetch(`http://localhost:1234/products/${id}`)
+      //   .then((r) => r.json())
+      //   .then((d) => setProduct(d));
     }
   }, [id]);
 
