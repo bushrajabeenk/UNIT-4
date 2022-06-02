@@ -4,16 +4,18 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { AuthContext } from "./context/AuthContext";
+import { AuthProvider } from "./context/AuthContext";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <BrowserRouter>
-    <AuthContext>
+    <AuthProvider>
       <App />
-    </AuthContext>
+    </AuthProvider>
   </BrowserRouter>
 );
 
 reportWebVitals();
+
+// always keep our custom wrappers inside, amd other 3rd party wrappers outside

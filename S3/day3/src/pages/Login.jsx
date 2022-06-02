@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const [loginCreds, setLoginCreds] = useState({});
+  const { login } = useContext(AuthContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -13,6 +15,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    login();
   };
 
   return (

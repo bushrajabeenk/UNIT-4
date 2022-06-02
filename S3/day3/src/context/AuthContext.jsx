@@ -2,24 +2,32 @@ import React, { createContext, useState } from "react";
 
 export const AuthContext = createContext();
 
-const AuthProvider = ({ children }) => {
-  const [isAuthorised, setisAuthorised] = useState(true);
+export const AuthProvider = ({ children }) => {
+  const [isAuth, setIsAuth] = useState(true);
 
-  const login = (username, password) => {
-    if (username && password) {
-      setisAuthorised(true);
-    }
+  const login = () => {
+    setIsAuth(true);
   };
 
   const logout = () => {
-    setisAuthorised(false);
+    setIsAuth(false);
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthorised, login, logout }}>
+    <AuthContext.Provider value={{ isAuth, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export default AuthProvider;
+
+
+
+
+//steps for creating a context
+// 1. createContext
+// 2. create Provider
+//  - return children
+//  - pass values
+// 3. wrap application i.e APP inside the Provider
+// 4. useContext
