@@ -1,16 +1,28 @@
 import React, { createContext } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false);
   const navigate = useNavigate();
+  const { state } = useLocation();
+
+  // const login = () => {
+  //   setIsAuth(true);
+  //   navigate("/feed");
+  // };
 
   const login = () => {
     setIsAuth(true);
-    navigate("/feed");
+    if (state.from) {
+      // if there is some history from where im coming from, then i should
+      // navigate to the same history
+      navigate(state.from, { replace: true });
+    } else {
+      navigate("/");
+    }
   };
 
   const logout = () => {
