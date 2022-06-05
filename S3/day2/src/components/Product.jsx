@@ -12,7 +12,7 @@ const Product = () => {
   useEffect(() => {
     if (id) {
       const getData = async () => {
-        let res = await axios.get(`http://localhost:1234/products/${id}`);
+        let res = await axios.get(`http://localhost:4444/products/${id}`);
         let data = await res.data;
         //console.log(data);
         setProduct(data);
@@ -28,6 +28,7 @@ const Product = () => {
     <div>
       ProductID: {id}
       <div>{product.name}</div>
+      <div>{product.place}</div>
     </div>
   );
 };

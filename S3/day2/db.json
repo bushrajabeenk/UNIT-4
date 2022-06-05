@@ -1,7 +1,7 @@
 {
   "products": [
-    { "id": 1, "name": "AAAAAAA" },
-    { "id": 2, "name": "BBBBBBBB" },
-    { "id": 3, "name": "CCC" }
+    { "id": 1, "name": "AAAAAAA", "place": "Blore" },
+    { "id": 2, "name": "BBBBBBBB", "place": "Delhi" },
+    { "id": 3, "name": "CCC", "place": "Hydbd" }
   ]
 }

@@ -29,6 +29,7 @@ const Navbar = () => {
     >
       Navbar:
       <Link to="">Home</Link>
+      <Link to="/posts">Posts</Link>
       <Link to="/feed">Feed</Link>
       <button onClick={handleLoginClick}>
         {" "}

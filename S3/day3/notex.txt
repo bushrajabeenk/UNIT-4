@@ -1,5 +1,6 @@
 // HOME accessible on all pages 
 // login accessible on all pages
+// feed only accessible after login
 
 
 

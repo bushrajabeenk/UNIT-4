@@ -1,0 +1,3 @@
+/  => Home - accessible to all
+/login => Login - accessible to all
+/feed => Feed - only accessible to authorised users/after logging in
