@@ -1,0 +1,6 @@
+Redux: 
+1. `npm i redux react-redux`  
+2. create reducer function
+3. createStore -> depreciated -> now it is -> legacy_createstore, and pass reducer function to it
+4. wrap our application ReduxProvider and pass store    
+5. 
