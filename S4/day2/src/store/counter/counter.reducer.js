@@ -1,4 +1,4 @@
-import { DEC_COUNTER, INC_COUNTER } from "./action.type";
+import { DEC_COUNTER, INC_COUNTER } from "./counter.types";
 
 export const counterReducer = (state = { count: 0 }, { type, payload }) => {
   switch (type) {

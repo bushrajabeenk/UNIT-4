@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { counterInc, counterDec } from "../store/action";
+import { counterDec, counterInc } from './../store/counter/counter.actions';
 
 const Counter = () => {
   const dispatch = useDispatch();
