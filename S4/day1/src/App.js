@@ -5,14 +5,16 @@ import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
+
+  // used to read value from store.
   const count = useSelector((state) => state.count);
 
   return (
     <div className="App">
       <h1>Counter: {count}</h1>
       <div>
-        <button onClick={() => dispatch({ type: "subtract" })}>-</button>
-        <button onClick={() => dispatch({ type: "add" })}>+</button>
+        <button onClick={() => dispatch({type: "subtract"})}>-</button>
+        <button onClick={() => dispatch({type: "add"})}>-</button>
       </div>
     </div>
   );
