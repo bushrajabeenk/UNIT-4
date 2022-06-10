@@ -1,13 +1,13 @@
 import {
-  COMPLETE_TODO,
-  UPDATED_TODO,
-  DELETE_TODO,
+  // COMPLETE_TODO,
+  // UPDATED_TODO,
+  // DELETE_TODO,
   GET_TODOS_ERROR,
   GET_TODOS_SUCCESS,
   GET_TODOS_LOADING,
   ADD_TODOS_LOADING,
   ADD_TODOS_SUCCESS,
-  ADD_TODOS_ERROR
+  ADD_TODOS_ERROR,
 } from "./todo.types";
 import axios from "axios";
 
@@ -16,12 +16,15 @@ export const getTodos = (dispatch) => {
   return axios
     .get("http://localhost:8080/todos")
     .then((r) => {
+      // setTimeout(() => {
       dispatch({ type: GET_TODOS_SUCCESS, payload: r.data });
+      // }, 5000);
     })
     .catch((e) => {
       dispatch({ type: GET_TODOS_ERROR });
     });
 };
+
 export const addTodo = (dispatch, payload) => {
   dispatch({ type: ADD_TODOS_LOADING });
   axios
@@ -34,6 +37,6 @@ export const addTodo = (dispatch, payload) => {
     });
 };
 
-export const completeTodo = (id) => ({ type: COMPLETE_TODO, payload: id });
-export const updateTodo = (payload) => ({ type: UPDATED_TODO, payload });
-export const deleteTodo = (id) => ({ type: DELETE_TODO, payload: id });
+// export const completeTodo = (id) => ({ type: COMPLETE_TODO, payload: id });
+// export const updateTodo = (payload) => ({ type: UPDATED_TODO, payload });
+// export const deleteTodo = (id) => ({ type: DELETE_TODO, payload: id });

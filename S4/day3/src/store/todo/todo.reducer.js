@@ -4,23 +4,23 @@ import {
   GET_TODOS_SUCCESS,
   ADD_TODOS_LOADING,
   ADD_TODOS_SUCCESS,
-  ADD_TODOS_ERROR
+  ADD_TODOS_ERROR,
   // COMPLETE_TODO,
   // DELETE_TODO,
   // UPDATED_TODO,
 } from "./todo.types";
 
 const initState = {
-  addTodos : {
+  addTodos: {
+    loading: false,
+    error: false,
+    data: {},
+  },
+  getTodos: {
     loading: false,
     error: false,
     data: [],
   },
-  getTodos : {
-    loading: false,
-    error: false,
-    data: [],
-  }
 };
 
 export const todoReducer = (state = initState, { type, payload }) => {
@@ -31,8 +31,8 @@ export const todoReducer = (state = initState, { type, payload }) => {
         getTodos: {
           ...state.getTodos,
           loading: true,
-          error: false
-        }
+          error: false,
+        },
       };
     }
     case GET_TODOS_SUCCESS: {
@@ -42,8 +42,8 @@ export const todoReducer = (state = initState, { type, payload }) => {
           ...state.getTodos,
           loading: false,
           error: false,
-          todos: payload,
-        }        
+          data: payload,
+        },
       };
     }
     case GET_TODOS_ERROR: {
@@ -53,7 +53,7 @@ export const todoReducer = (state = initState, { type, payload }) => {
           ...state.getTodos,
           loading: false,
           error: true,
-        }          
+        },
       };
     }
 
@@ -63,19 +63,22 @@ export const todoReducer = (state = initState, { type, payload }) => {
         addTodos: {
           ...state.addTodos,
           loading: true,
-          error: false
-        }
+          error: false,
+        },
       };
     }
     case ADD_TODOS_SUCCESS: {
       return {
         ...state,
+        getTodos: {
+          data: [...state.getTodos.data, payload],
+        },
         addTodos: {
           ...state.addTodos,
           loading: false,
           error: false,
-          todos: payload,
-        }        
+          data: payload,
+        },
       };
     }
     case ADD_TODOS_ERROR: {
@@ -85,7 +88,7 @@ export const todoReducer = (state = initState, { type, payload }) => {
           ...state.addTodos,
           loading: false,
           error: true,
-        }          
+        },
       };
     }
     // case ADD_TODO: {
