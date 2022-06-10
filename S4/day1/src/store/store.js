@@ -6,3 +6,8 @@ import { reducer } from "./reducer";
 //   };
 
 export const store = legacy_createStore(reducer);
+
+
+// store.subscribe(() => {
+//     console.log("Subscribe:", store.getState());
+// })

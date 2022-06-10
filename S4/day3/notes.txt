@@ -1,0 +1,7 @@
+- redux-dev-tools 
+   - configure  
+      - compose 
+      - applyMiddleWare  
+      - enhancer 
+   - redux-thunk 
+   - working with localStorage
