@@ -12,15 +12,17 @@ const Todo = () => {
 
   const addNew = () => {
     let value = ref.current.value;
-    addingTodoFunc(dispatch, {
-      value: value,
-      isCompleted: false,
-    });
+    dispatch(
+      addingTodoFunc({
+        value: value,
+        isCompleted: false,
+      })
+    );
     ref.current.value = null;
   };
 
   useEffect(() => {
-    gettingTodosFunc(dispatch);
+    dispatch(gettingTodosFunc());
   }, []);
 
   if (getTodo.loading) return <h1>Loading...</h1>;
@@ -30,7 +32,9 @@ const Todo = () => {
       <h1>Todo</h1>
       <div>
         <input ref={ref} type="text" />
-        <button disabled={addTodo.loading} onClick={addNew}>Add todo</button>
+        <button disabled={addTodo.loading} onClick={addNew}>
+          Add todo
+        </button>
       </div>
       {todos.map((todo) => (
         <div key={todo.id}>{todo.value}</div>

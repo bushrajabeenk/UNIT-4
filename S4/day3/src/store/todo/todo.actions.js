@@ -11,7 +11,7 @@ import {
 } from "./todo.types";
 import axios from "axios";
 
-export const gettingTodosFunc = (dispatch) => {
+export const gettingTodosFunc = () => (dispatch) => {
   dispatch({ type: GET_TODOS_LOADING });
   return axios
     .get("http://localhost:8080/todos")
@@ -25,7 +25,7 @@ export const gettingTodosFunc = (dispatch) => {
     });
 };
 
-export const addingTodoFunc = (dispatch, payload) => {
+export const addingTodoFunc = (payload) => (dispatch) => {
   dispatch({ type: ADD_TODOS_LOADING });
   axios
     .post("http://localhost:8080/todos", payload)
