@@ -11,7 +11,7 @@ import {
 } from "./todo.types";
 import axios from "axios";
 
-export const getTodos = (dispatch) => {
+export const gettingTodosFunc = (dispatch) => {
   dispatch({ type: GET_TODOS_LOADING });
   return axios
     .get("http://localhost:8080/todos")
@@ -20,19 +20,19 @@ export const getTodos = (dispatch) => {
       dispatch({ type: GET_TODOS_SUCCESS, payload: r.data });
       // }, 5000);
     })
-    .catch((e) => {
+    .catch(() => {
       dispatch({ type: GET_TODOS_ERROR });
     });
 };
 
-export const addTodo = (dispatch, payload) => {
+export const addingTodoFunc = (dispatch, payload) => {
   dispatch({ type: ADD_TODOS_LOADING });
   axios
     .post("http://localhost:8080/todos", payload)
     .then((r) => {
       dispatch({ type: ADD_TODOS_SUCCESS, payload: r.data });
     })
-    .catch((e) => {
+    .catch(() => {
       dispatch({ type: ADD_TODOS_ERROR });
     });
 };

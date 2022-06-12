@@ -11,16 +11,15 @@ import {
 } from "./todo.types";
 
 const initState = {
-  addTodos: {
+  addTodo: {
     loading: false,
     error: false,
-    data: {},
   },
-  getTodos: {
+  getTodo: {
     loading: false,
     error: false,
-    data: [],
   },
+  data: [],
 };
 
 export const todoReducer = (state = initState, { type, payload }) => {
@@ -28,8 +27,8 @@ export const todoReducer = (state = initState, { type, payload }) => {
     case GET_TODOS_LOADING: {
       return {
         ...state,
-        getTodos: {
-          ...state.getTodos,
+        getTodo: {
+          ...state.getTodo,
           loading: true,
           error: false,
         },
@@ -38,19 +37,19 @@ export const todoReducer = (state = initState, { type, payload }) => {
     case GET_TODOS_SUCCESS: {
       return {
         ...state,
-        getTodos: {
-          ...state.getTodos,
+        getTodo: {
+          ...state.getTodo,
           loading: false,
           error: false,
-          data: payload,
         },
+        data: payload,
       };
     }
     case GET_TODOS_ERROR: {
       return {
         ...state,
-        getTodos: {
-          ...state.getTodos,
+        getTodo: {
+          ...state.getTodo,
           loading: false,
           error: true,
         },
@@ -60,8 +59,8 @@ export const todoReducer = (state = initState, { type, payload }) => {
     case ADD_TODOS_LOADING: {
       return {
         ...state,
-        addTodos: {
-          ...state.addTodos,
+        addTodo: {
+          ...state.addTodo,
           loading: true,
           error: false,
         },
@@ -70,22 +69,19 @@ export const todoReducer = (state = initState, { type, payload }) => {
     case ADD_TODOS_SUCCESS: {
       return {
         ...state,
-        getTodos: {
-          data: [...state.getTodos.data, payload],
-        },
-        addTodos: {
-          ...state.addTodos,
+        addTodo: {
+          ...state.addTodo,
           loading: false,
           error: false,
-          data: payload,
         },
+        data: [...state.data, payload],
       };
     }
     case ADD_TODOS_ERROR: {
       return {
         ...state,
-        addTodos: {
-          ...state.addTodos,
+        addTodo: {
+          ...state.addTodo,
           loading: false,
           error: true,
         },
