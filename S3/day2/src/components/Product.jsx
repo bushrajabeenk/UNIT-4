@@ -5,14 +5,14 @@ import { useParams } from "react-router-dom";
 const Product = () => {
   const [product, setProduct] = useState({});
   const { id } = useParams();
-  // useParamsto extract the url parameters
+  // useParams to extract the url parameters
 
   console.log(id);
 
   useEffect(() => {
     if (id) {
       const getData = async () => {
-        let res = await axios.get(`http://localhost:4444/products/${id}`);
+        let res = await axios.get(`http://localhost:1234/products/${id}`);
         let data = await res.data;
         //console.log(data);
         setProduct(data);

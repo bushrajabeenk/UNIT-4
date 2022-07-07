@@ -1,18 +1,19 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleClick = (id) => {
-    if (id === 1) {
-      navigate("/products/1");
-    } else if (id === 2) {
-      navigate("/products/2");
-    } else if (id === 3) {
-      navigate("/products/3");
-    }
-  };
+  // const handleClick = (id) => {
+  //   if (id === 1) {
+  //     navigate("/products/1");
+  //   } else if (id === 2) {
+  //     navigate("/products/2");
+  //   } else if (id === 3) {
+  //     navigate("/products/3");
+  //   }
+  // };
 
   return (
     <div>
@@ -27,9 +28,9 @@ const Navbar = () => {
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
       <Link to="/products">Products</Link>
-      <button onClick={() => handleClick(1)}>Go To Product 1</button>
+      {/* <button onClick={() => handleClick(1)}>Go To Product 1</button>
       <button onClick={() => handleClick(2)}>Go To Product 2</button>
-      <button onClick={() => handleClick(3)}>Go To Product 3</button>
+      <button onClick={() => handleClick(3)}>Go To Product 3</button> */}
     </div>
   );
 };

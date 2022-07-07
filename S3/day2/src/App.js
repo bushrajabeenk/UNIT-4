@@ -30,7 +30,7 @@ function App() {
         products/* will ALSO lead us to Products page, So to show that particular
         page for example, if products/1 should lead us to produsct 1 page
         then we need to use Outlet to show product 1 page */}
-        <Route path="products" element={<Products />}>
+        <Route path="products/*" element={<Products />}>
           <Route path=":id" element={<Product />} />
         </Route>
       </Routes>
