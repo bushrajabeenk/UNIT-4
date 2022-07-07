@@ -9,8 +9,8 @@ const Form = () => {
   //     isIndian: false,
   //   });
   // these can be avoided unless we have
-  // some initial value to be defined for
-  // any particular input
+  // some initial value to be defined for any particular input
+
 
   const [form, setForm] = useState({});
   const userRef = useRef();
