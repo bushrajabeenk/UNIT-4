@@ -14,7 +14,7 @@ const Timer = () => {
 
 
     //  these are called cleanup functions
-    // if the component is unmounted before the setInterval
+    // if the component is unmounted before the setInterval/setTimeout
     // time runs out. For example in the above case, it is given 1000
     // if the component is unmounted, ie if the component App
     // is removed from the UI before the completion of 1000s
