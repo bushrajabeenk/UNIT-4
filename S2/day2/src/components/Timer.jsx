@@ -22,7 +22,7 @@ const Timer = () => {
     // then we don't want the timer to keep running, because the App
     // itself is removed from UI, we don't want the timer to keep running
     // so to stop the timer from running in such cases
-    // we use cleanup functiom
+    // we use cleanup function
     return () => {
       // call an api to inform that user has logged out
       clearInterval(id);
