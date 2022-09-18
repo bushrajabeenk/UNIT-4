@@ -32,7 +32,7 @@ const Todos = () => {
   // without useEffect, fetch keeps running fetch infinitely, as state change leads to re-render, this will keep repeating,
   // to perform fetch operation only once use useEffect, API will run only once, i.e when the first time the component is rendered
   // but useEffect will also run infinite times whenever the state is changed,
-  // empty array is passed
+  // therefore empty array is passed
 
   return (
     <div>
