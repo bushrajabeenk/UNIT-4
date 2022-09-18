@@ -37,3 +37,10 @@ const StopwatchuseRef = () => {
     );
   };
 export default StopwatchuseRef
+
+// The useRef Hook allows you to persist values between renders. It can be used to store a mutable 
+// value that does not cause a re-render when updated.
+
+// both the hooks useState and useRef are a bit similar. The difference is that useState returns the 
+// current state and has an updater function that updates the state. While useRef returns an object, 
+// doesn't cause components to re-render, and it's used to reference DOM elements.
