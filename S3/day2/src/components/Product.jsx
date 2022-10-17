@@ -12,7 +12,7 @@ const Product = () => {
   useEffect(() => {
     if (id) {
       const getData = async () => {
-        let res = await axios.get(`http://localhost:1234/products/${id}`);
+        let res = await axios.get(`https://localhost:1234/products/${id}`);
         let data = await res.data;
         //console.log(data);
         setProduct(data);
