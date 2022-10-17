@@ -6,19 +6,23 @@ const Stopwatch = () => {
   const [timerId, setTimerId] = useState(null);
 
   const start = () => {
-    let id = setInterval(() => {
-      setWatch((prev) => prev + 1);
-    }, 1000);
-    setTimerId(id);
+    if (!timerId) {
+      let id = setInterval(() => {
+        setWatch((prev) => prev + 1);
+      }, 1000);
+      setTimerId(id);
+    }
   };
 
   const pause = () => {
     clearInterval(timerId);
+    setTimerId(null);
   };
 
   const reset = () => {
     clearInterval(timerId);
     setWatch(0);
+    setTimerId(null);
   };
 
   return (
